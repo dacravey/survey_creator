@@ -28,3 +28,8 @@ post('/survey_list/:id') do
   @question = Question.create({:question => question, :survey_id => survey_id})
   erb(:take_survey)
 end
+
+get('/submit_survey/') do
+
+  erb(:submit_survey)
+end

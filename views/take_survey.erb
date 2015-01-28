@@ -1,4 +1,4 @@
-<h1>Take Survey <%= @survey.survey_name() %></h1>
+<h1>Make Survey <%= @survey.survey_name() %></h1>
 
 <form action = "/survey_list/:id" method = "post">
 
@@ -11,8 +11,15 @@
 </form>
 
 <ul>
+  <form action= "/response" method="post">
+
   <% @survey.questions().each() do |question| %>
   <li><%= question.question() %><li>
-
+  <li><input type="text" name="response" value=""></li>
   <% end %>
+  </form>
 </ul>
+
+<a href="/submit_survey/">Submit Survey</a>
+<br />
+<a href="/"> go home </a>
