@@ -23,7 +23,7 @@ GEM
     minitest (5.5.1)
     multi_json (1.10.1)
     pg (0.18.1)
-    rack (1.6.0)
+    rack (1.5.2)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -67,6 +67,7 @@ PLATFORMS
 
 DEPENDENCIES
   pg
+  rack (= 1.5.2)
   rake
   rspec
   shoulda-matchers

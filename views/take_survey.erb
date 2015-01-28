@@ -1,0 +1,12 @@
+<h1>Take Survey:</h1>
+
+<%= @survey.survey_name() %>
+
+<form action="/take_survey" method="post">
+  <label for=""></label>
+
+  <% @questions.each() do |question| %>
+    <%= question.question() %><br />
+  <% end %>
+
+</form>

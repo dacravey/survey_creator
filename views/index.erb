@@ -1,7 +1,7 @@
 <h1>Survey Depot</h1>
 <form action='/survey_list' method="post">
-  <label for="name">Name Your Survey: </label>
-  <input type="text" name="name">
+  <label for="survey_name">Name Your Survey: </label>
+  <input type="text" name="survey_name">
 
   </br>
 
@@ -28,3 +28,8 @@
   <button type="submit">Add Your Survey!</button>
 
 </form>
+
+
+<% @surveys.each() do |survey| %>
+  <a href="/survey_list/<%= survey.id()%>"><%= survey.survey_name() %></a><br />
+<% end %>
