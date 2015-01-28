@@ -1,12 +1,18 @@
-<h1>Take Survey:</h1>
+<h1>Take Survey <%= @survey.survey_name() %></h1>
 
-<%= @survey.survey_name() %>
+<form action = "/survey_list/:id" method = "post">
 
-<form action="/take_survey" method="post">
-  <label for=""></label>
+  <input name="survey_id" type="hidden" value="<%= @survey.id() %>">
+  <label for="question">Add a question: </label>
+  <input type="text" name="question">
+  <br />
 
-  <% @questions.each() do |question| %>
-    <%= question.question() %><br />
-  <% end %>
-
+  <button type="submit"> Add! </button>
 </form>
+
+<ul>
+  <% @survey.questions().each() do |question| %>
+  <li><%= question.question() %><li>
+
+  <% end %>
+</ul>
