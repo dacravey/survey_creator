@@ -37,8 +37,8 @@ delete('/survey_delete/:id') do
 end
 
 patch('/survey_edit/:id') do
-  @survey = Survey.find(params.fetch("id").to_i())
   survey_name = params.fetch("survey_name")
+  @survey = Survey.find(params.fetch("id").to_i())
   @survey.update({:survey_name => survey_name})
   @surveys = Survey.all()
   erb(:index)
