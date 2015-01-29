@@ -29,7 +29,17 @@ post('/survey_list/:id') do
   erb(:take_survey)
 end
 
-get('/submit_survey/') do
+delete('/survey_delete/:id') do
+  @survey = Survey.find(params.fetch("id").to_i())
+  @survey.delete()
+  @surveys = Survey.all()
+  erb(:index)
+end
 
-  erb(:submit_survey)
+patch('/survey_edit/:id') do
+  @survey = Survey.find(params.fetch("id").to_i())
+  survey_name = params.fetch("survey_name")
+  @survey.update({:survey_name => survey_name})
+  @surveys = Survey.all()
+  erb(:index)
 end

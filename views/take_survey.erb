@@ -20,6 +20,19 @@
   </form>
 </ul>
 
+<form action="/survey_edit/<%= @survey.id() %>" method="post">
+  <input name="_method" type="hidden" value="patch">
+  <label for="survey_name">Rename Survey:</label>
+  <input name="survey_name" type="text" value="<%= @survey.survey_name() %>">
+  <button type="submit"> Edit the Survey </button>
+</form>
+<br />
+
+<form action="/survey_delete/<%= @survey.id() %>" method="post">
+  <input name="_method" type="hidden" value="delete">
+  <button type="submit"> Delete This Survey </button>
+</form>
+
 <a href="/submit_survey/">Submit Survey</a>
 <br />
 <a href="/"> go home </a>
